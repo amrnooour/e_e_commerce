@@ -1,8 +1,14 @@
-import 'package:e_commerce/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:e_commerce/core/localization/change_locale.dart';
+import 'package:e_commerce/core/localization/tanslation.dart';
+import 'package:e_commerce/core/services/services.dart';
+import 'package:e_commerce/routes.dart';
+import 'package:e_commerce/views/choose_lang/choose_lang.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialService();
   runApp(const MyApp());
 }
 
@@ -11,9 +17,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    LocaleController controller = Get.put(LocaleController());
+    return GetMaterialApp(
+      translations: Tanslation(),
+      locale: controller.language,
       debugShowCheckedModeBanner: false,
-      home: OnboardingView(),
+      home: const ChooseLang(),
+      routes: routes,
     );
   }
 }
