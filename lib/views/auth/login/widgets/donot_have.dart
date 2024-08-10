@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 
 class DonotHave extends StatelessWidget {
   final void Function()? onTap;
-  const DonotHave({super.key,this.onTap});
+  final String title;
+  final String title2;
+  const DonotHave({super.key, this.onTap, required this.title, required this.title2});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Text("do not have an account? "),
+        Text(title),
         GestureDetector(
-          onTap: onTap,
-          child: const Text("sign up",style: TextStyle(color: Colors.pink),))
+            onTap: onTap,
+            child: Text(title2,
+              style: const TextStyle(color: Colors.pink),
+            ))
       ],
     );
   }
