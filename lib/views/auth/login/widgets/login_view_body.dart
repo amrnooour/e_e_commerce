@@ -54,9 +54,13 @@ class LoginViewBody extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Align(
+              Align(
                   alignment: Alignment.topRight,
-                  child: CustomTitle(title: "forget password")),
+                  child: CustomTitle(
+                      onTap: () {
+                        controller.goToForgetPassword();
+                      },
+                      title: "forget password")),
               const SizedBox(
                 height: 10,
               ),
