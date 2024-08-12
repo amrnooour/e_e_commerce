@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 abstract class SignupController extends GetxController {
   signUp();
   goToSignIn();
+  goToSuccessSignUp();
 }
 
 class SignupControllerImpl extends SignupController {
@@ -24,10 +25,15 @@ class SignupControllerImpl extends SignupController {
   @override
   goToSignIn() {
     Get.offNamed("/login");
-      }
+  }
 
   @override
   signUp() {
     throw UnimplementedError();
+  }
+
+  @override
+  goToSuccessSignUp() {
+    Get.offAllNamed("/successSignUp");
   }
 }

@@ -67,7 +67,12 @@ class SignUpViewBody extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const CustomAuthButton(title: "sign up"),
+              CustomAuthButton(
+                title: "sign up",
+                onTap: () {
+                  controller.goToSuccessSignUp();
+                },
+              ),
               const SizedBox(
                 height: 20,
               ),

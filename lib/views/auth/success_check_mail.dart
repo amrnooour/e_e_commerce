@@ -1,17 +1,16 @@
-import 'package:e_commerce/controllers/auth/success_signup_controller.dart';
+import 'package:e_commerce/controllers/auth/success_check_mail_controller.dart';
 import 'package:e_commerce/core/shared/custom_auth_button.dart';
 import 'package:e_commerce/views/auth/login/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 
-class SuccessSignUp extends StatelessWidget {
-  const SuccessSignUp({super.key});
+class SuccessCheckMail extends StatelessWidget {
+  const SuccessCheckMail({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SuccessSignUpControllerImpl controller =
-        Get.put(SuccessSignUpControllerImpl());
+    SuccessCheckMailControllerImpl controller =
+        Get.put(SuccessCheckMailControllerImpl());
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -20,20 +19,16 @@ class SuccessSignUp extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text("Sucess",style: TextStyle(fontSize: 30),),
-                //const CustomAppbar(title: "Success"),
+                const CustomAppbar(title: "Success"),
                 const SizedBox(
                   height: 50,
                 ),
                 const Icon(
                   Icons.check_circle_outlined,
-                  size: 150,
+                  size: 100,
                   color: Colors.pink,
                 ),
-                const SizedBox(
-                  height: 100,
-                ),
-                //const Spacer(),
+                const Spacer(),
                 CustomAuthButton(
                     onTap: () {
                       controller.gotoSignIn();
@@ -45,6 +40,5 @@ class SuccessSignUp extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
