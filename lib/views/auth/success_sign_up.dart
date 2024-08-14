@@ -1,9 +1,7 @@
 import 'package:e_commerce/controllers/auth/success_signup_controller.dart';
 import 'package:e_commerce/core/shared/custom_auth_button.dart';
-import 'package:e_commerce/views/auth/login/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class SuccessSignUp extends StatelessWidget {
   const SuccessSignUp({super.key});

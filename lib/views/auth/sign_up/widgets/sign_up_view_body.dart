@@ -19,56 +19,56 @@ class SignUpViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const CustomAppbar(title: "sign up"),
+              CustomAppbar(title: "17".tr),
               const SizedBox(
                 height: 50,
               ),
-              const Text(
-                "Welcome Back",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              Text(
+                "10".tr,
+                style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                  "Sign up with your email and password \n         or continue social media"),
+              Text(
+                  "24".tr),
               const SizedBox(
                 height: 50,
               ),
-              const CustomTextField(
-                label: "User name",
-                hintText: "Enter your User name",
-                sufixIcon: Icon(Icons.person),
+              CustomTextField(
+                label: "20".tr,
+                hintText: "23".tr,
+                sufixIcon: const Icon(Icons.person),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const CustomTextField(
-                label: "phone",
-                hintText: "Enter your phone",
-                sufixIcon: Icon(Icons.phone),
+              CustomTextField(
+                label: "21".tr,
+                hintText: "22".tr,
+                sufixIcon: const Icon(Icons.phone),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const CustomTextField(
-                label: "Email",
-                hintText: "Enter your Email",
-                sufixIcon: Icon(Icons.email),
+               CustomTextField(
+                label: "18".tr,
+                hintText: "12".tr,
+                sufixIcon: const Icon(Icons.email),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const CustomTextField(
-                label: "Password",
-                hintText: "Enter your Password",
-                sufixIcon: Icon(Icons.lock),
+               CustomTextField(
+                label: "19".tr,
+                hintText: "13".tr,
+                sufixIcon: const Icon(Icons.lock),
               ),
               const SizedBox(
                 height: 20,
               ),
               CustomAuthButton(
-                title: "sign up",
+                title: "17".tr,
                 onTap: () {
                   controller.goToSuccessSignUp();
                 },
@@ -77,8 +77,8 @@ class SignUpViewBody extends StatelessWidget {
                 height: 20,
               ),
               DonotHave(
-                title: "have an account ? ",
-                title2: "sign in",
+                title: "25".tr,
+                title2: "17".tr,
                 onTap: () {
                   controller.goToSignIn();
                 },

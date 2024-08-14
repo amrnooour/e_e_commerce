@@ -21,35 +21,35 @@ class LoginViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const CustomAppbar(title: "sign in"),
+              CustomAppbar(title: "9".tr),
               const SizedBox(
                 height: 50,
               ),
               const Logo(),
-              const Text(
-                "Welcome Back",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              Text(
+                "10".tr,
+                style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                  "Sign in with your email and password \n         or continue social media"),
+               Text(
+                  "11".tr),
               const SizedBox(
                 height: 50,
               ),
-              const CustomTextField(
-                label: "Email",
-                hintText: "Enter your Email",
-                sufixIcon: Icon(Icons.email),
+               CustomTextField(
+                label: "18".tr,
+                hintText: "12".tr,
+                sufixIcon: const Icon(Icons.email),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const CustomTextField(
-                label: "Password",
-                hintText: "Enter your Password",
-                sufixIcon: Icon(Icons.lock),
+               CustomTextField(
+                label: "19".tr,
+                hintText: "13".tr,
+                sufixIcon: const Icon(Icons.lock),
               ),
               const SizedBox(
                 height: 20,
@@ -60,17 +60,17 @@ class LoginViewBody extends StatelessWidget {
                       onTap: () {
                         controller.goToForgetPassword();
                       },
-                      title: "forget password")),
+                      title: "14".tr)),
               const SizedBox(
                 height: 10,
               ),
-              const CustomAuthButton(title: "sign in"),
+              CustomAuthButton(title: "9".tr),
               const SizedBox(
                 height: 20,
               ),
               DonotHave(
-                title2: "sign up",
-                title: "do not have an account? ",
+                title2: "17".tr,
+                title: "16".tr,
                 onTap: () {
                   controller.goToSignUp();
                 },

@@ -20,26 +20,26 @@ class ForgetPassword extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const CustomAppbar(title: "forget password"),
+                CustomAppbar(title: "14".tr),
                 const SizedBox(
                   height: 50,
                 ),
-                const Text(
-                  "Check Email",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                Text(
+                  "27".tr,
+                  style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                    "please enter your email address \n         to recive a vertification code"),
+                Text(
+                    "29".tr),
                 const SizedBox(
                   height: 50,
                 ),
-                const CustomTextField(
-                  label: "Email",
-                  hintText: "Enter your Email",
-                  sufixIcon: Icon(Icons.email),
+                 CustomTextField(
+                  label: "18".tr,
+                  hintText: "12".tr,
+                  sufixIcon: const Icon(Icons.email),
                 ),
                 const SizedBox(
                   height: 20,
@@ -48,7 +48,7 @@ class ForgetPassword extends StatelessWidget {
                     onTap: () {
                       controller.gotoVerifyCode();
                     },
-                    title: "check"),
+                    title: "30".tr),
                 const SizedBox(
                   height: 20,
                 ),
