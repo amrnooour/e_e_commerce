@@ -1,4 +1,5 @@
 import 'package:e_commerce/controllers/auth/login_controller.dart';
+import 'package:e_commerce/core/functions/validator_input.dart';
 import 'package:e_commerce/core/shared/custom_auth_button.dart';
 import 'package:e_commerce/core/shared/custom_text_field.dart';
 import 'package:e_commerce/views/auth/login/widgets/custom_appbar.dart';
@@ -18,64 +19,78 @@ class LoginViewBody extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CustomAppbar(title: "9".tr),
-              const SizedBox(
-                height: 50,
-              ),
-              const Logo(),
-              Text(
-                "10".tr,
-                style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-               Text(
-                  "11".tr),
-              const SizedBox(
-                height: 50,
-              ),
-               CustomTextField(
-                label: "18".tr,
-                hintText: "12".tr,
-                sufixIcon: const Icon(Icons.email),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-               CustomTextField(
-                label: "19".tr,
-                hintText: "13".tr,
-                sufixIcon: const Icon(Icons.lock),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Align(
-                  alignment: Alignment.topRight,
-                  child: CustomTitle(
-                      onTap: () {
-                        controller.goToForgetPassword();
-                      },
-                      title: "14".tr)),
-              const SizedBox(
-                height: 10,
-              ),
-              CustomAuthButton(title: "9".tr),
-              const SizedBox(
-                height: 20,
-              ),
-              DonotHave(
-                title2: "17".tr,
-                title: "16".tr,
-                onTap: () {
-                  controller.goToSignUp();
-                },
-              ),
-            ],
+          child: Form(
+            key: controller.key,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomAppbar(title: "9".tr),
+                const SizedBox(
+                  height: 50,
+                ),
+                const Logo(),
+                Text(
+                  "10".tr,
+                  style: const TextStyle(
+                      fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text("11".tr),
+                const SizedBox(
+                  height: 50,
+                ),
+                CustomTextField(
+                  validator: (val) {
+                    return validInput(val!, 5, 50, "email");
+                  },
+                  label: "18".tr,
+                  hintText: "12".tr,
+                  sufixIcon: const Icon(Icons.email),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                CustomTextField(
+                  validator: (val) {
+                    return validInput(val!, 5, 50, "password");
+                  },
+                  label: "19".tr,
+                  hintText: "13".tr,
+                  sufixIcon: const Icon(Icons.lock),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Align(
+                    alignment: Alignment.topRight,
+                    child: CustomTitle(
+                        onTap: () {
+                          controller.goToForgetPassword();
+                        },
+                        title: "14".tr)),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomAuthButton(
+                  title: "9".tr,
+                  onTap: () {
+                    controller.login();
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                DonotHave(
+                  title2: "17".tr,
+                  title: "16".tr,
+                  onTap: () {
+                    controller.goToSignUp();
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

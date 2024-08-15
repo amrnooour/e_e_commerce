@@ -5,6 +5,7 @@ import 'package:e_commerce/views/auth/sign_up/sign_up.dart';
 import 'package:e_commerce/views/auth/success_check_mail.dart';
 import 'package:e_commerce/views/auth/success_sign_up.dart';
 import 'package:e_commerce/views/auth/vertify_code.dart';
+import 'package:e_commerce/views/home/home_view.dart';
 import 'package:e_commerce/views/onboarding/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   "/resetPassord" : (context) => const ResetPassword(),
   "/successSignUp" : (context) => const SuccessSignUp(),
   "/successCheckMail" : (context) => const SuccessCheckMail(),
+  "/home" :(context) =>const HomeView()
 
 
 

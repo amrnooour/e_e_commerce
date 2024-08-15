@@ -6,19 +6,21 @@ class CustomTextField extends StatelessWidget {
   final String? hintText;
   final Widget? sufixIcon;
   final String label;
+  final String? Function(String?)? validator;
 
   const CustomTextField(
       {super.key,
       this.onChanged,
       this.controller,
       this.hintText,
-      this.sufixIcon, required this.label});
+      this.sufixIcon, required this.label, this.validator});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: onChanged,
       controller: controller,
+      validator: validator,
       decoration: InputDecoration(
         disabledBorder: buildBorder(),
         hintText: hintText,

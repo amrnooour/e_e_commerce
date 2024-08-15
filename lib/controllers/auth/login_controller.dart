@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 abstract class LoginController extends GetxController {
@@ -8,6 +10,7 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImpl extends LoginController {
+  GlobalKey<FormState> key = GlobalKey();
   late TextEditingController email;
   late TextEditingController password;
   @override
@@ -17,7 +20,11 @@ class LoginControllerImpl extends LoginController {
 
   @override
   login() {
-    throw UnimplementedError();
+    var formKey = key.currentState;
+    if (formKey!.validate()) {
+      Get.offNamed("/home");
+    } else {
+    }
   }
 
   @override
@@ -26,7 +33,7 @@ class LoginControllerImpl extends LoginController {
     password = TextEditingController();
     super.onInit();
   }
-  
+
   @override
   goToForgetPassword() {
     Get.toNamed("/forgetPassword");

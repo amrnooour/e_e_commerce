@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +9,7 @@ abstract class SignupController extends GetxController {
 }
 
 class SignupControllerImpl extends SignupController {
+  GlobalKey<FormState> key = GlobalKey();
   late TextEditingController email;
   late TextEditingController password;
   late TextEditingController userName;
@@ -29,7 +31,10 @@ class SignupControllerImpl extends SignupController {
 
   @override
   signUp() {
-    throw UnimplementedError();
+    if (key.currentState!.validate()) {
+      goToSuccessSignUp();
+    } else {
+    }
   }
 
   @override
