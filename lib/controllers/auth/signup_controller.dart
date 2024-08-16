@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -5,7 +6,7 @@ import 'package:get/get.dart';
 abstract class SignupController extends GetxController {
   signUp();
   goToSignIn();
-  goToSuccessSignUp();
+  goToVerifyCode();
 }
 
 class SignupControllerImpl extends SignupController {
@@ -32,13 +33,13 @@ class SignupControllerImpl extends SignupController {
   @override
   signUp() {
     if (key.currentState!.validate()) {
-      goToSuccessSignUp();
-    } else {
-    }
+      goToVerifyCode();
+    } else {}
   }
 
   @override
-  goToSuccessSignUp() {
-    Get.offAllNamed("/successSignUp");
+  goToVerifyCode() {
+    Get.offAllNamed(Constants.verifyCode);
+    Get.delete<SignupControllerImpl>();
   }
 }

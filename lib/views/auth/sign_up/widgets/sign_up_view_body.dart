@@ -50,6 +50,7 @@ class SignUpViewBody extends StatelessWidget {
                   height: 20,
                 ),
                 CustomTextField(
+                  keyboardType: TextInputType.phone,
                   validator: (val) {
                     return validInput(val!, 5, 50, "phone");
                   },
@@ -61,6 +62,7 @@ class SignUpViewBody extends StatelessWidget {
                   height: 20,
                 ),
                 CustomTextField(
+                  keyboardType: TextInputType.emailAddress,
                   validator: (val) {
                     return validInput(val!, 5, 50, "email");
                   },

@@ -15,7 +15,7 @@ class LoginControllerImpl extends LoginController {
   late TextEditingController password;
   @override
   goToSignUp() {
-    Get.toNamed("/signUp");
+    Get.offNamed("/signUp");
   }
 
   @override

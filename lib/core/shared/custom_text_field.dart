@@ -7,17 +7,19 @@ class CustomTextField extends StatelessWidget {
   final Widget? sufixIcon;
   final String label;
   final String? Function(String?)? validator;
+  final TextInputType? keyboardType;
 
   const CustomTextField(
       {super.key,
       this.onChanged,
       this.controller,
       this.hintText,
-      this.sufixIcon, required this.label, this.validator});
+      this.sufixIcon, required this.label, this.validator, this.keyboardType});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: keyboardType,
       onChanged: onChanged,
       controller: controller,
       validator: validator,
