@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/services/services.dart';
 import 'package:e_commerce/data/datasource/static/static.dart';
 import 'package:e_commerce/views/onboarding/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class CutomItemPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MyServices myServices = Get.find();
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -58,6 +60,7 @@ class CutomItemPage extends StatelessWidget {
                   onTap: () {
                     int nextPage = controller.page!.toInt() + 1;
                     if (nextPage < onBoardingList.length) {
+                      myServices.sharedPreferences.setString("onboarding", "1");
                       controller.animateToPage(
                         nextPage,
                         duration: const Duration(milliseconds: 300),

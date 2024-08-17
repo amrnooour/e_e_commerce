@@ -2,7 +2,6 @@ import 'package:e_commerce/core/localization/change_locale.dart';
 import 'package:e_commerce/core/localization/tanslation.dart';
 import 'package:e_commerce/core/services/services.dart';
 import 'package:e_commerce/routes.dart';
-import 'package:e_commerce/views/choose_lang/choose_lang.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,8 +21,7 @@ class MyApp extends StatelessWidget {
       translations: Tanslation(),
       locale: controller.language,
       debugShowCheckedModeBanner: false,
-      home: const ChooseLang(),
-      routes: routes,
+      getPages: routes,
     );
   }
 }
