@@ -8,17 +8,21 @@ class CustomTextField extends StatelessWidget {
   final String label;
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
+  final bool obscureText;
+  final void Function()? showPassword;
 
   const CustomTextField(
       {super.key,
       this.onChanged,
       this.controller,
       this.hintText,
-      this.sufixIcon, required this.label, this.validator, this.keyboardType});
+      this.sufixIcon, required this.label, this.validator, this.keyboardType,
+      this.obscureText=false, this.showPassword});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText,
       keyboardType: keyboardType,
       onChanged: onChanged,
       controller: controller,
@@ -29,7 +33,9 @@ class CustomTextField extends StatelessWidget {
         hintStyle: TextStyle(color: Colors.grey.withOpacity(.5), fontSize: 14),
         labelText: label,
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: sufixIcon,
+        suffixIcon: GestureDetector(
+          onTap: showPassword,
+          child: sufixIcon),
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(),
         border: buildBorder(),

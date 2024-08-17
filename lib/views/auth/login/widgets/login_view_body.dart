@@ -55,14 +55,18 @@ class LoginViewBody extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    CustomTextField(
+                    GetBuilder<LoginControllerImpl>(builder: (controller) => CustomTextField(
+                      obscureText: controller.secure,
+                      showPassword: () {
+                        controller.showPassword();
+                      },
                       validator: (val) {
                         return validInput(val!, 5, 50, "password");
                       },
                       label: "19".tr,
                       hintText: "13".tr,
-                      sufixIcon: const Icon(Icons.lock),
-                    ),
+                      sufixIcon: controller.secure==false? const Icon(Icons.visibility) : const Icon(Icons.visibility_off_outlined),
+                    )),
                     const SizedBox(
                       height: 20,
                     ),

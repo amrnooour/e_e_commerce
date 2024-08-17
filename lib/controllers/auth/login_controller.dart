@@ -13,6 +13,14 @@ class LoginControllerImpl extends LoginController {
   GlobalKey<FormState> key = GlobalKey();
   late TextEditingController email;
   late TextEditingController password;
+
+  bool secure = true;
+
+  showPassword() {
+    secure = !secure;
+    update();
+  }
+
   @override
   goToSignUp() {
     Get.offNamed("/signUp");
@@ -23,8 +31,7 @@ class LoginControllerImpl extends LoginController {
     var formKey = key.currentState;
     if (formKey!.validate()) {
       Get.offNamed("/home");
-    } else {
-    }
+    } else {}
   }
 
   @override
