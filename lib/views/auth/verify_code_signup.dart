@@ -56,6 +56,5 @@ class VerifyCodeSignup extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

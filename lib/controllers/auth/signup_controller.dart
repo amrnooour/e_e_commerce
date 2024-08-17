@@ -39,7 +39,7 @@ class SignupControllerImpl extends SignupController {
 
   @override
   goToVerifyCode() {
-    Get.offAllNamed(Constants.verifyCode);
+    Get.offAllNamed(Constants.verifyCodeSignup);
     Get.delete<SignupControllerImpl>();
   }
 }

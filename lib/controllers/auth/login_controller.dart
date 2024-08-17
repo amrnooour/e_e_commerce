@@ -36,6 +36,6 @@ class LoginControllerImpl extends LoginController {
 
   @override
   goToForgetPassword() {
-    Get.toNamed("/forgetPassword");
+    Get.offNamed("/forgetPassword");
   }
 }

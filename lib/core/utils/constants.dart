@@ -7,4 +7,6 @@ abstract class Constants {
   static const successSignip = "/successSignUp";
   static const onboarding = "/onboarding";
   static const forgetPassword = "/forgetPassword";
+  static const verifyCodeSignup = "/vertifyCodeSignup";
+
 }

@@ -95,7 +95,7 @@ class SignUpViewBody extends StatelessWidget {
                 ),
                 DonotHave(
                   title: "25".tr,
-                  title2: "17".tr,
+                  title2: "9".tr,
                   onTap: () {
                     controller.goToSignIn();
                   },
